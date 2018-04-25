@@ -3,6 +3,8 @@
  * jQuery is already loaded
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
+const POST_URL = "http://localhost:8080/";
+
 
 
 const data = [
@@ -80,6 +82,15 @@ function createTweetElement(tweet){
 }
 
 $(document).ready(function(){
+
+$( "form" ).on( "submit", function( event ) {
+  event.preventDefault();
+  $.ajax({
+    type: 'POST',
+    url: '/tweets',
+    data: $( this ).serialize()
+})
+});
 
 renderTweets(data);
 
