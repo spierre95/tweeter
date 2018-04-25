@@ -55,6 +55,7 @@ const data = [
 ];
 
 function renderTweets(tweets) {
+  $('.display-tweet').empty()
   for (let tweet of tweets){
     $('.display-tweet').append(createTweetElement(tweet))
 }
@@ -83,12 +84,22 @@ function createTweetElement(tweet){
 
 $(document).ready(function(){
 
-$( "form" ).on( "submit", function( event ) {
+$('.new-tweet #submit').on("click",function(){
+  if($('.new-tweet textarea').val().trim().length < 1)
+  alert('Its called Tweeter not Crickets! Please tell us what you\'re humming about.')
+})
+
+$( ".new-tweet form" ).on( "submit", function( event ) {
   event.preventDefault();
+
   $.ajax({
     type: 'POST',
     url: '/tweets',
-    data: $( this ).serialize()
+    data: $( this ).serialize(),
+    success: function(data){
+          loadTweets()
+      }
+
 })
 });
 
@@ -97,12 +108,13 @@ $.ajax({
         url: '/tweets',
         method: 'GET',
         success: function(data){
+          let reverse = data.reverse()
           renderTweets(data)
       }
 });
 }
 
-loadTweets();
+loadTweets()
 
-})// to see what it looks like
- // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+
+})
