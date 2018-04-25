@@ -1,0 +1,148 @@
+*:focus{
+    outline:none;
+}
+
+.clearfix {zoom 1}
+.clearfix:after{
+    content: '.';
+    clear:both;
+    display:block;
+    height:0;
+    visibility: hidden;
+}
+
+/*Making new tweets*/
+
+.new-tweet{
+  border:solid 1px #f8f8f8;
+  border-radius: 5px;
+  margin:0 auto;
+  padding:10px 15px;
+  background-color:#eee;
+  width:90%;
+
+}
+
+.new-tweet h2 {
+border-bottom: solid 2px black;
+font-weight:bold;
+color:#00a087;
+}
+
+.new-tweet textarea{
+   width:100%;
+   border-radius: 5px;
+   border:1px solid #ccc;
+   height:65px;
+   margin-bottom:3px;
+   padding:5px;
+}
+
+
+.new-tweet .counter{
+  float:right;
+  font-style:italic;
+  color:#00a087;
+  line-height:-15px;
+  margin-top:3px;
+}
+
+.new-tweet .counter:hover{
+  font-style:initial;
+  color:#00c2a4;
+}
+
+.new-tweet input:hover{
+  background-color:#00c2a4;
+}
+
+.new-tweet input{
+  border-radius: 5px;
+  background-color:#00a087;
+}
+
+/*Diplaying Tweets*/
+
+.display-tweet article{
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  margin:50px auto;
+  background-color:white;
+  width:90%;
+  height:200px;
+  opacity:0.75;
+}
+
+.display-tweet article:hover{
+  opacity:1;
+}
+
+.display-tweet header{
+  background-color: #eee;
+}
+
+.display-tweet header img{
+  float:left;
+  display:inline-block;
+  margin:10px;
+  width:50px;
+  height:auto;
+  border-radius: 10px;
+}
+
+.display-tweet header h2{
+  display:inline-block;
+  vertical-align: top;
+  color:#00a087;
+
+}
+
+
+.display-tweet header .username{
+  float:right;
+  display:inline-block;
+  padding:10px;
+  color:#00a087;
+}
+
+.display-tweet .content{
+  height:90px;
+  margin-left:0;
+  padding-top:35px;
+  padding-left: 15px;
+}
+
+.display-tweet footer{
+  border-top: solid 1px #eee;
+  font-style: italic;
+  padding:10px;
+  color:#aaa;
+}
+
+.display-tweet footer i{
+  float:right;
+  margin-right:8px;
+  font-size: 20px;
+  color:#00a087;
+  display:none;
+
+}
+
+.display-tweet:hover footer i{
+  display:block;
+}
+
+.display-tweet footer i:hover{
+  color:#00c2a4;
+}
+
+
+
+
+
+
+
+
+
+
+
