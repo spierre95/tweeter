@@ -92,7 +92,17 @@ $( "form" ).on( "submit", function( event ) {
 })
 });
 
-renderTweets(data);
+function loadTweets(){
+$.ajax({
+        url: '/tweets',
+        method: 'GET',
+        success: function(data){
+          renderTweets(data)
+      }
+});
+}
+
+loadTweets();
 
 })// to see what it looks like
  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
