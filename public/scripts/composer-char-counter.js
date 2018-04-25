@@ -1,12 +1,9 @@
 $( document ).ready(function() {
-
-  $(".new-tweet textarea" ).on("keyup", function() {
-    let $parent = $(this).parent();
+  $(".new-tweet textarea" ).on("keyup", function(event) {
+    let $counter = $(this).parent().children('.counter')
     let $length = $(this).val().length;
-    let $counter = $parent.children('.counter').text(140 - length);
 
-});
-
-
+    $counter.text(140 - $length);
+  });
 });
 

@@ -84,9 +84,16 @@ function createTweetElement(tweet){
 
 $(document).ready(function(){
 
+$('#nav-bar #compose').on("click",function(){
+$('.new-tweet').slideToggle();
+$('.new-tweet textarea').val("");
+})
+
 $('.new-tweet #submit').on("click",function(){
-  if($('.new-tweet textarea').val().trim().length < 1)
+  if($('.new-tweet textarea').val().trim().length < 1){
   alert('Its called Tweeter not Crickets! Please tell us what you\'re humming about.')
+}
+$('.new-tweet').slideToggle();
 })
 
 $( ".new-tweet form" ).on( "submit", function( event ) {

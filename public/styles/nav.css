@@ -23,3 +23,37 @@
   padding:15px 0 0 10px;
 }
 
+#nav-bar #compose{
+  float:right;
+  background-color:#007e6a;
+  width:128px;
+  height:60px;
+  margin:10px 140px 10px 10px;
+  border:solid 1px #006d5c;
+  border-radius: 5px;
+  text-align:center;
+  font-size:20px;
+  color:#E8FDFF;
+}
+
+#nav-bar i{
+  margin-right:5px;
+  color:#E8FDFF;
+}
+
+#nav-bar #compose:hover{
+  border:solid 1px #00b196;
+  color:#f9feff;
+  background:#00c2a4;
+}
+
+
+
+
+
+
+
+
+
+
+
