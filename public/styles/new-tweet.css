@@ -33,7 +33,7 @@ color:#00a087;
    width:100%;
    border-radius: 5px;
    border:1px solid #ccc;
-   height:65px;
+   height:75px;
    margin-bottom:3px;
    padding:5px;
 }
@@ -70,11 +70,12 @@ color:#00a087;
   background-color:white;
   width:90%;
   height:200px;
-  opacity:0.75;
+  opacity:0.70;
 }
 
 .display-tweet article:hover{
   opacity:1;
+  border:solid 2px #aaa;
 }
 
 .display-tweet header{
@@ -128,7 +129,7 @@ color:#00a087;
 
 }
 
-.display-tweet:hover footer i{
+.display-tweet article:hover i{
   display:block;
 }
 

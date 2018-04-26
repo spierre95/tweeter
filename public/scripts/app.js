@@ -1,8 +1,8 @@
-// var moment = require('/moment');
-// moment().format();
+var moment = require('moment');
+moment().format();
 
-// var day = moment.unix(1461116232227);
-// console.log(day);
+var day = moment.unix(1461116232227);
+console.log(day);
 
 
 const data = [
@@ -85,6 +85,7 @@ $(document).ready(function(){
 $('#nav-bar #compose').on("click",function(){
 $('.new-tweet').slideToggle();
 $('.new-tweet textarea').val("");
+$('.new-tweet .counter').text(140);
 })
 
 $('.new-tweet #submit').on("click",function(){
