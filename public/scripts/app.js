@@ -1,10 +1,8 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-const POST_URL = "http://localhost:8080/";
+// var moment = require('/moment');
+// moment().format();
 
+// var day = moment.unix(1461116232227);
+// console.log(day);
 
 
 const data = [
