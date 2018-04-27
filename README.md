@@ -4,8 +4,8 @@ Tweeter is a simple, single-page Twitter clone. Built using jQuery and AJAX on t
 
 ##Final Product
 
-!["Screenshot of the login page"]()
-!["Screenshot of the create new urls page"]()
+!["Screenshot of the login page"](https://github.com/spierre95/tweeter/blob/master/docs/compose-tweet.png?raw=true)
+!["Screenshot of the create new urls page"](https://github.com/spierre95/tweeter/blob/master/docs/display-tweet.png?raw=true)
 
 ## Dependencies
 
