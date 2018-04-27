@@ -3,13 +3,12 @@ function renderTweets(tweets) {
   $('.display-tweet').empty()
   for (let tweet of tweets){
     $('.display-tweet').append(createTweetElement(tweet))
-}
+  }
 }
 
 function createTweetElement(tweet){
 
-
- let $article = $('<article>')
+ let $article = $('<article>');
 
  const $header = $('<header>').addClass('clearfix').appendTo($article);
  const $img = $('<img>').attr("src",tweet.user.avatars.small).appendTo($header);
@@ -29,52 +28,59 @@ function createTweetElement(tweet){
 
 $(document).ready(function(){
 
-$('.new-tweet textarea').keypress(function (enter) {
-  if (enter.which == 13) {
+  $('.new-tweet textarea').keypress(function (enter) {
+    if (enter.which == 13) {
+      $('.new-tweet').slideToggle();
+      $('.new-tweet #submit').submit();
+      return false;
+    }
+  });
+
+  $('#nav-bar #compose').on("click",function(){
     $('.new-tweet').slideToggle();
-    $('.new-tweet #submit').submit();
-    return false;
+    $('.new-tweet textarea').val("");
+    $('.new-tweet .counter').text(140);
+  })
+
+  $('.new-tweet #submit').on("click",function(event){
+    if($('.new-tweet textarea').val().trim().length < 1){
+      event.preventDefault();
+      alert('Its called Tweeter not Crickets! Please enter some text!');
+      return false;
+    } else if ($('.new-tweet .counter').text() < "0"){
+      event.preventDefault();
+      alert('Slow down chatty bird! You\'ve entered too many characters!');
+      return false;
+    } else{
+      $('.new-tweet').slideToggle();
+    }
+  })
+
+  $( ".new-tweet form" ).on( "submit", function( event ) {
+    event.preventDefault();
+
+    $.ajax({
+      type: 'POST',
+      url: '/tweets',
+      data: $( this ).serialize(),
+      success: function(data){
+        loadTweets()
+      }
+
+    })
+  });
+
+  function loadTweets(){
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function(data){
+        let reverse = data.reverse()
+        renderTweets(data)
+      }
+    });
   }
-});
 
-$('#nav-bar #compose').on("click",function(){
-$('.new-tweet').slideToggle();
-$('.new-tweet textarea').val("");
-$('.new-tweet .counter').text(140);
-})
-
-$('.new-tweet #submit').on("click",function(){
-  if($('.new-tweet textarea').val().trim().length < 1){
-  alert('Its called Tweeter not Crickets! Please enter some text')
-}
-$('.new-tweet').slideToggle();
-})
-
-$( ".new-tweet form" ).on( "submit", function( event ) {
-  event.preventDefault();
-
-  $.ajax({
-    type: 'POST',
-    url: '/tweets',
-    data: $( this ).serialize(),
-    success: function(data){
-          loadTweets()
-      }
-
-})
-});
-
-function loadTweets(){
-$.ajax({
-        url: '/tweets',
-        method: 'GET',
-        success: function(data){
-          let reverse = data.reverse()
-          renderTweets(data)
-      }
-});
-}
-
-loadTweets();
+  loadTweets();
 
 })

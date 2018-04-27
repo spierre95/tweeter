@@ -1,0 +1,75 @@
+/*Diplaying Tweets*/
+
+.display-tweet article{
+  border:solid 1px #ccc;
+  border-radius: 5px;
+  margin:50px auto;
+  background-color:white;
+  width:90%;
+  height:200px;
+  opacity:0.70;
+}
+
+.display-tweet article:hover{
+  opacity:1;
+  border:solid 2px #ddd;
+}
+
+.display-tweet header{
+  background-color: #eee;
+}
+
+.display-tweet header img{
+  float:left;
+  display:inline-block;
+  margin:10px;
+  width:50px;
+  height:auto;
+  border-radius: 10px;
+}
+
+.display-tweet header h2{
+  display:inline-block;
+  vertical-align: top;
+  color:#00a087;
+
+}
+
+
+.display-tweet header .username{
+  float:right;
+  display:inline-block;
+  padding:10px;
+  color:#00a087;
+}
+
+.display-tweet .content{
+  height:90px;
+  margin-left:0;
+  padding:20px;
+  word-wrap: break-word;
+}
+
+.display-tweet footer{
+  border-top: solid 1px #eee;
+  font-style: italic;
+  padding:10px;
+  color:#aaa;
+}
+
+.display-tweet footer i{
+  float:right;
+  margin-right:8px;
+  font-size: 20px;
+  color:#00a087;
+  display:none;
+
+}
+
+.display-tweet article:hover i{
+  display:block;
+}
+
+.display-tweet footer i:hover{
+  color:#00c2a4;
+}
