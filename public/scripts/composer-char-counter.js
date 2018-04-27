@@ -1,3 +1,6 @@
+
+//Updating Counter
+
 $( document ).ready(function() {
   $(".new-tweet textarea" ).on("keyup", function(event) {
 

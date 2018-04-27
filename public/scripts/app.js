@@ -1,10 +1,14 @@
 
+//Appending tweets to container
+
 function renderTweets(tweets) {
   $('.display-tweet').empty()
   for (let tweet of tweets){
     $('.display-tweet').append(createTweetElement(tweet))
   }
 }
+
+//Creating HTML of new tweets
 
 function createTweetElement(tweet){
 
@@ -28,6 +32,8 @@ function createTweetElement(tweet){
 
 $(document).ready(function(){
 
+  //press enter to submit form
+
   $('.new-tweet textarea').keypress(function (enter) {
     if (enter.which == 13) {
       $('.new-tweet').slideToggle();
@@ -36,11 +42,15 @@ $(document).ready(function(){
     }
   });
 
+  //Compose Button
+
   $('#nav-bar #compose').on("click",function(){
     $('.new-tweet').slideToggle();
     $('.new-tweet textarea').val("");
     $('.new-tweet .counter').text(140);
   })
+
+  //Submit Button
 
   $('.new-tweet #submit').on("click",function(event){
     if($('.new-tweet textarea').val().trim().length < 1){
@@ -55,6 +65,8 @@ $(document).ready(function(){
       $('.new-tweet').slideToggle();
     }
   })
+
+  // Ajax Post and Get requests
 
   $( ".new-tweet form" ).on( "submit", function( event ) {
     event.preventDefault();
