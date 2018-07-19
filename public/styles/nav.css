@@ -6,6 +6,7 @@
   width:100vw;
   padding:0 2em;
   z-index:100;
+  display: flex;
 }
 
 #nav-bar .logo{
